@@ -23,6 +23,10 @@ public class Product {
     @Column(name = "availability")
     private boolean availability;
 
+    @ManyToOne
+    @JoinColumn(name = "basket_id", nullable = false)
+    private Basket basket;
+
     public Product(Long id, String name, double price, boolean availability) {
         this.id = id;
         this.name = name;

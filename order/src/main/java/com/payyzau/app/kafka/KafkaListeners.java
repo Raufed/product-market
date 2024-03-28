@@ -23,6 +23,7 @@ public class KafkaListeners {
     @KafkaListener(topics = "newProduct", groupId = "groupId")
     void listener(String data) throws JsonProcessingException {
         Product product = objectMapper.readValue(data, Product.class);
+
         System.out.println(product);
     }
 }
